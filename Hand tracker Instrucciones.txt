@@ -1,0 +1,17 @@
+1) Installar Python 3.11.9 en Win (https://www.python.org/downloads/windows/)
+
+2) CMD: python -m pip install --upgrade pip
+
+3) CMD: python -m pip install "mediapipe==0.10.21" "numpy<2" opencv-python //Nota: Versión vieja de mediapipe
+
+4) Ir a la carpeta con el hand_sender.py (esta carpeta) y escribir cmd en el explorador (donde va la ruta)
+
+5) Poner: .\.venv\Scripts\activate //Nota: Para activar python y la libreria
+
+6) Desde ahí poner: python hand_sender.py //Nota: para ejecutar el programa, el cual puede cerrarse con ESC
+
+Opcional:
+
+A) Correr "test_cam.py" para chequear que camara es la que detecta win
+
+B) Ajustar CAM_INDEX_PRIMARY = 1 en "hand_sender.py" segun resultado anterior

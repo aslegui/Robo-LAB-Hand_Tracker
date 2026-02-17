@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhwl17fx2g7oq"]
+
+[ext_resource type="Script" uid="uid://d1g6fov1ims47" path="res://HandUDPReceiver.gd" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://dvtxxq2nc0rlu" path="res://camera_3d.gd" id="1_r0du0"]
+[ext_resource type="Script" uid="uid://cvqmp4xqtxvl7" path="res://HandPoints.gd" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://bx4ml3lf3pjch" path="res://GestureDetector.gd" id="4_cm0pq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GestureLabel" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -236.0
+offset_top = 3.0
+offset_right = -153.0
+offset_bottom = 26.0
+grow_horizontal = 0
+text = "Gesture: ..."
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+script = ExtResource("1_r0du0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.70710677, -0.49999997, 0.49999997, 0, 0.70710677, 0.70710677, -0.70710677, -0.49999997, 0.49999997, 2, 4, 2)
+
+[node name="HandUDPReceiver" type="Node" parent="."]
+script = ExtResource("1_glv2v")
+
+[node name="HandPoints" type="Node3D" parent="."]
+script = ExtResource("2_uu6xs")
+
+[node name="GestureDetector" type="Node" parent="."]
+script = ExtResource("4_cm0pq")
+receiver_path = NodePath("../HandUDPReceiver")
+label_path = NodePath("../UI/GestureLabel")

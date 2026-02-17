@@ -1,4 +1,6 @@
-1) Installar Python 3.11.9 en Win (https://www.python.org/downloads/windows/)
+0) Instalar Godot Engine en Win, en este caso usamos el común no .NET (https://godotengine.org/download/windows/)
+
+1) Instalar Python 3.11.9 en Win (https://www.python.org/downloads/windows/)
 
 2) CMD: python -m pip install --upgrade pip
 
